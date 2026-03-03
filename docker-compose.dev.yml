@@ -1,0 +1,22 @@
+services:
+  snake:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "3002:3000"
+    volumes:
+      - snake-data:/data
+    environment:
+      NODE_ENV: production
+      DB_PATH: /data/snake.db
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD-SHELL", "wget -qO- http://localhost:3000/api/leaderboard?difficulty=easy || exit 1"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+      start_period: 10s
+
+volumes:
+  snake-data:
