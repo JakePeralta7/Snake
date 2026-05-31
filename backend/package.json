@@ -1,6 +1,7 @@
 {
   "name": "snake-backend",
   "version": "1.0.0",
+  "packageManager": "pnpm@11.0.0",
   "description": "Snake game backend with persistent leaderboard",
   "main": "server.js",
   "scripts": {
