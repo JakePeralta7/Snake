@@ -1,4 +1,3 @@
-// @ts-nocheck
 'use strict';
 
 // ── Constants ─────────────────────────────────────────────────────────────────
@@ -429,4 +428,3 @@ function fmtDate(ts) {
   initTheme();
   startNewGame();
 })();
-
